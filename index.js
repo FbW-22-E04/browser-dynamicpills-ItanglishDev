@@ -18,12 +18,17 @@ aside.addEventListener('click', (event) => {
   console.log(event);
 
   filmName.forEach(el => {
-    // console.log('el content', el.textContent);
-    // console.log('event content', event.target.textContent);
-    if (el.textContent === event.target.textContent) {
+    if (el.parentElement.includes('active'))
+      // console.log('el content', el.textContent);
+      // console.log('event content', event.target.textContent);
+      if (el.textContent === event.target.textContent) {
 
-      el.parentElement.classList.toggle('active')
-      event.target.classList.toggle('selected')
-    }
+        el.parentElement.classList.toggle('active')
+        event.target.classList.toggle('selected')
+      }
+
+    // el.parentElement.classList.remove('active')
+    // el.parentElement.classList.remove('selected')
+
   })
 })
